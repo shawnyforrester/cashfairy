@@ -1,7 +1,7 @@
-<div *ngIf="!isAuthenticated">
+<div *ngIf="!isLoggedIn">
   <app-menu></app-menu>
 </div>
-<div *ngIf="isAuthenticated">
+<div *ngIf="isLoggedIn">
   <app-profile-bar></app-profile-bar>
 </div>
 <router-outlet></router-outlet>

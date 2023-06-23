@@ -17,7 +17,9 @@ describe('AccountPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AccountPageComponent);
+    const app = fixture.componentInstance;
+    expect(app).is.not.null;
   });
 });

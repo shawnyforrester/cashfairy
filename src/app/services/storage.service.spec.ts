@@ -11,6 +11,6 @@ describe('StorageService', () => {
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).is.not.null;
   });
 });

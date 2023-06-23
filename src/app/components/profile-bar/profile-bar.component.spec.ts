@@ -18,6 +18,6 @@ describe('ProfileBarComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).is.not.null;
   });
 });

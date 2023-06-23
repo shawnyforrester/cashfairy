@@ -29,7 +29,8 @@
               type="text"
               class="form-control"
               name="username"
-              [(ngModel)]="user.username"
+              value="username"
+              [(ngModel)]="form.username"
               required
               #username="ngModel"
               [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
@@ -47,7 +48,8 @@
               type="password"
               class="form-control"
               name="password"
-              [(ngModel)]="user.password"
+              value="password"
+              [(ngModel)]="form.password"
               required
               minlength="6"
               #password="ngModel"
@@ -82,7 +84,7 @@
         </form>
 
         <div class="alert alert-success" *ngIf="isLoggedIn">
-          Logged in as {{ role }}.
+          Sucessful Login!
         </div>
       </div>
     </div>

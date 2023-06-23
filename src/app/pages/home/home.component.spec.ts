@@ -17,7 +17,9 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const app = fixture.componentInstance;
+    expect(app).is.not.null;
   });
 });

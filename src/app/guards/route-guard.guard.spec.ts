@@ -11,6 +11,6 @@ describe('RouteGuardGuard', () => {
   });
 
   it('should be created', () => {
-    expect(guard).toBeTruthy();
+    expect(guard).is.not.null;
   });
 });

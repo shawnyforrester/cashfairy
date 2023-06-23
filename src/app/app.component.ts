@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StorageService } from './services/storage.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,18 @@ import { StorageService } from './services/storage.service';
 })
 export class AppComponent {
   title = 'cashfairy-Ng';
-
-  isAuthenticated: boolean = false;
   
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string; 
 
-  constructor(private service: StorageService) {}
   
+  constructor(private storageService: StorageService, private authService: AuthService) { }
+
   ngOnInit(): void {
-    this.isAuthenticated = this.service.isLoggedIn();
-    
+    this.isLoggedIn = this.storageService.isLoggedIn();
+
   }
 
   

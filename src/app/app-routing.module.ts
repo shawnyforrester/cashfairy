@@ -12,7 +12,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'profile/:id', component: AccountPageComponent},
-  {path: '**', redirectTo: 'home'},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'profile/:id/transaction', component:TransactionComponent}
 

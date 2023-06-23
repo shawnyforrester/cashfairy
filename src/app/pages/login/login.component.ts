@@ -12,26 +12,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  user: Customer = {
-    id: 0,
-    first_name: '',
-    last_name: '',
+  form: any = {
+   
     username: '',
     password: '',
-    city: '',
-    email: '',
-    dob: '',
-    telephone: '',
-    role: '',
-    account: {
-      id: 0,
-      savings: '',
-      checking: '',
-      debit: '',
-      credit: '',
-      account_owner: []
-    },
-    transactions: []
+   
+   
   }
   isLoggedIn = false;
   isLoginFailed = false;
@@ -42,38 +28,31 @@ export class LoginComponent {
     private route: Router, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.role = this.storageService.getUser().role;
-    }
+  
   }
 
-  ngOnChange():void{
-    this.isLoggedIn = this.storageService.isLoggedIn();
-  }
+
 
   onSubmit(): void {
-    this.isLoggedIn = true;
-    this.authService.login(this.user).subscribe(data => {
-         this.storageService.saveUser(data);
-         this.appComponent.ngOnInit();
+    const { username, password } = this.form;
+    
+    this.authService.login(username, password).subscribe({
+      next: data => {
+      
+        this.storageService.saveUser(data);
+        this.isLoginFailed = false
+        this.isLoggedIn = true;
+        this.route.navigate(['profile/'+this.storageService.getUser().id]);
       },
-      error => {
-        console.log(error)
-        this.isLoginFailed = true
-      },
-      () => {
-         this.isLoginFailed = false
-         this.role = this.storageService.getUser().role;
-         this.reloadPage()
-      }
-    );
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+    },     
+        
+      });
   }
 
-  reloadPage(): void {
-    this.route.navigateByUrl('profile');
 
-  }
 
 
 }

@@ -11,6 +11,6 @@ export interface Customer{
     dob: string;
     telephone: string;
     role: string;
-    account: Account;
     transactions: [];
+    accounts: Account[];
 }

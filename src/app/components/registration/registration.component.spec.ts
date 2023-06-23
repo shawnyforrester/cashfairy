@@ -17,7 +17,12 @@ describe('RegistrationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  
+    it('should create the app', () => {
+      const fixture = TestBed.createComponent(RegistrationComponent);
+      const app = fixture.componentInstance;
+      expect(app).is.not.null;
+    });
+  
 });
+
