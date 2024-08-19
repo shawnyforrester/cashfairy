@@ -13,6 +13,7 @@ import { ProfileBarComponent } from './components/profile-bar/profile-bar.compon
 
 import { httpInterceptorProviders } from './helpers/http.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPaymentComponent } from './components/add-payment/add-payment.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     AccountPageComponent,
     TransactionComponent,
     MenuComponent,
-    ProfileBarComponent
+    ProfileBarComponent,
+    AddPaymentComponent,
+    
   ],
   imports: [
     BrowserModule,

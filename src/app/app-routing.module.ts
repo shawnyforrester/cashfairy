@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AccountPageComponent } from './pages/account-page/account-page.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { AddPaymentComponent } from './components/add-payment/add-payment.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'profile/:id', component: AccountPageComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'profile/:id/transaction', component:TransactionComponent}
+  {path: 'profile/:id/transaction', component:TransactionComponent},
+  {path: 'profile/:id/add-payment', component: AddPaymentComponent}
 
 ];
 

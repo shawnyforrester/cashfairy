@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Payment Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <title>Payment Details</title>
     <style>
+      /* CSS styles here */
       .container {
         display: flex;
       }
@@ -32,8 +37,8 @@
         font-weight: bold;
         font-size: x-large;
         color: #0b4868;
-        margin-bottom: 100px;
         margin-top: 80px;
+        margin-bottom: 100px;
       }
 
       .balance .material-symbols-outlined {
@@ -101,24 +106,44 @@
     <div class="container">
       <div class="sidebar">
         <ul>
-          <li>Recent Transactions</li>
-          <li>Update Payment Details</li>
-          <li>Update Balance</li>
+          <li>Account Details</li>
+          <li>Transfer Funds</li>
+          <li>Request Funds</li>
         </ul>
       </div>
       <div class="content">
         <div class="balance">
-          Balance: <span class="material-symbols-outlined">$</span>100.00
+          Add Payment Method<span class="material-symbols-outlined">
+            account_balance_wallet
+          </span>
         </div>
-        <form>          
+        <form>
           <div class="transactions">
             <div class="transaction-item">
-              <label for="username">Username of Receiver:</label>
-              <input type="text" id="username" name="username" required />
+              <label for="savings-account">Savings Account Number:</label>
+              <input
+                type="text"
+                id="savings-account"
+                name="savings-account"
+                required
+              />
             </div>
             <div class="transaction-item">
-              <label for="amount">Amount of Money to Send/Request:</label>
-              <input type="number" id="amount" name="amount" required />
+              <label for="checking-account">Checking Account Number:</label>
+              <input
+                type="text"
+                id="checking-account"
+                name="checking-account"
+                required
+              />
+            </div>
+            <div class="transaction-item">
+              <label for="debit-card">Debit Card Number:</label>
+              <input type="text" id="debit-card" name="debit-card" required />
+            </div>
+            <div class="transaction-item">
+              <label for="credit-card">Credit Card Number:</label>
+              <input type="text" id="credit-card" name="credit-card" required />
             </div>
           </div>
           <button type="submit">Submit</button>
