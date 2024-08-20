@@ -1,0 +1,6 @@
+version: "3"
+services:
+  web:
+    image: registry.gitlab.com/syohan1978/100_acre_woods:cashfairy-ui-app-1.0
+    ports:
+      - "80:80"
